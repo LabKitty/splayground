@@ -37,7 +37,7 @@
     <ul class="list-group">
         <li class="list-group-item">Latest reviews</li>
     </ul>
-    <?foreach( $posts as $post): ?>
+    <?foreach( $posts as $post):?>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <img src="images/tumb.PNG" alt="...">
@@ -49,6 +49,7 @@
             </div>
 
         </div>
+}
     <? endforeach ?>
 
 
