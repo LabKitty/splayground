@@ -42,8 +42,8 @@
             <div class="thumbnail">
                 <img src="images/tumb.PNG" alt="...">
                 <div class="caption">
-                    <h3> <?=$post['review_title']?></h3>
-                    <p><?=$post['review_text']?></p>
+                    <h3> <?=$review['review_title']?></h3>
+                    <p><?=$review['review_text']?></p>
 
                 </div>
             </div>

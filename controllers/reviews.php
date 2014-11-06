@@ -1,13 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nika
- * Date: 6.11.2014
- * Time: 13:19
- */
 
-class reviews extends Controller {
+class reviews extends Controller{
     function index(){
 
+        $this->reviews = get_all("SELECT * FROM review order by review_id desc limit 3");
     }
+
 }
+?>

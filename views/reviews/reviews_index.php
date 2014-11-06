@@ -11,36 +11,22 @@
     <ul class="list-group">
         <li class="list-group-item">LATEST REVIEWS</li>
     </ul>
+
+    <?foreach( $reviews as $review):?>
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <img src="images/tumb.PNG" alt="...">
             <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
+                <h3> <?=$review['review_title']?></h3>
+                <p><?=$review['review_text']?></p>
 
             </div>
         </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
 
-            </div>
-        </div>
     </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
+    <? endforeach ?><!-- Latest review posts -->
 
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <div class=".col-xs-6 .col-md-4">
