@@ -8,6 +8,6 @@
 
 class news extends Controller {
     function index(){
-
+        $this->news = get_all("SELECT * FROM new order by new_id");
     }
 }

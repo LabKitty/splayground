@@ -67,33 +67,19 @@ Cras justo odio
     </ul>
 
     <div class="row">
-        <div class="media">
-            <a class="media-left media-middle" href="#">
-                <img src="images/tumb.PNG" alt="...">
-            </a>
-            <div class="media-body">
-                <h4 class="media-heading">Middle aligned media</h4>
-                ...
-            </div>
-        </div>
 
-        <div class="media">
-            <a class="media-left media-middle" href="#">
-                <img src="images/tumb.PNG" alt="...">
-            </a>
-            <div class="media-body">
-                <h4 class="media-heading">Middle aligned media</h4>
-                ...
+        <?foreach( $news as $new):?>
+            <div class="media">
+                <a class="media-left media-middle" href="#">
+                    <img src="images/tumb.PNG" alt="...">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading"><?=$new['new_title']?></h4>
+                    <p><?=$new['new_text']?></p>
+                </div>
             </div>
-        </div>
 
-        <div class="media">
-            <a class="media-left media-middle" href="#">
-                <img src="images/tumb.PNG" alt="...">
-            </a>
-            <div class="media-body">
-                <h4 class="media-heading">Middle aligned media</h4>
-                ...
-            </div>
-        </div>
+        <? endforeach ?>
+
+
 </div>
