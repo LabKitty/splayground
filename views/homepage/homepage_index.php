@@ -37,36 +37,22 @@
     <ul class="list-group">
         <li class="list-group-item">Latest reviews</li>
     </ul>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
+    <?foreach( $posts as $post): ?>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="images/tumb.PNG" alt="...">
+                <div class="caption">
+                    <h3> <?=$post['post_title']?></h3>
+                    <p><?=$post['post_text']?></p>
 
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
 
-            </div>
         </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
+    <? endforeach ?>
 
-            </div>
-        </div>
-    </div>
+
+
 </div>
 
 <div class=".col-xs-6 .col-md-4">
@@ -91,7 +77,7 @@
         <li class="list-group-item">Articles</li>
     </ul>
 
-    <?foreach( $posts as $post):?>
+<?foreach( $posts as $post):?>
     <div class="col-sm-5 .col-md-6">
         <div class="thumbnail">
             <img src="<?= getDataURI($post['post_img']) ?>" />
@@ -103,7 +89,7 @@
         </div>
 
     </div>
-    <? endforeach ?>
+<? endforeach ?>
 
 </div>
 
