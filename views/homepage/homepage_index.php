@@ -93,9 +93,8 @@
 
     <?foreach( $posts as $post):?>
     <div class="col-sm-5 .col-md-6">
-
         <div class="thumbnail">
-           <img src="<?= getDataURI($post['post_img'])?>" alt="">
+            <img src="<?= getDataURI($post['post_img']) ?>" />
             <div class="caption">
                 <h3> <?=$post['post_title']?></h3>
                 <p><?=$post['post_text']?></p>
