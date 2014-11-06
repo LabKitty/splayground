@@ -93,6 +93,7 @@
 
     <?foreach( $posts as $post):?>
     <div class="col-sm-5 .col-md-6">
+
         <div class="thumbnail">
            <img src="<?= getDataURI($post['post_img'])?>" alt="">
             <div class="caption">
@@ -101,6 +102,7 @@
 
             </div>
         </div>
+
     </div>
     <? endforeach ?>
 
