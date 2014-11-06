@@ -33,30 +33,29 @@
     </div> <!-- Carousel -->
 </div>
 
-<div class="col-md-8 .col-md-4">
+<div class="col-md-8 .col-md-4"><!-- Latest review posts -->
     <ul class="list-group">
         <li class="list-group-item">Latest reviews</li>
     </ul>
-    <?foreach( $posts as $post):?>
+    <?foreach( $reviews as $review):?>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <img src="images/tumb.PNG" alt="...">
                 <div class="caption">
-                    <h3> <?=$post['post_title']?></h3>
-                    <p><?=$post['post_text']?></p>
+                    <h3> <?=$post['review_title']?></h3>
+                    <p><?=$post['review_text']?></p>
 
                 </div>
             </div>
 
         </div>
-}
-    <? endforeach ?>
+    <? endforeach ?><!-- Latest review posts -->
 
 
 
 </div>
 
-<div class=".col-xs-6 .col-md-4">
+<div class=".col-xs-6 .col-md-4"><!-- Sidebar-->
     <div class="pull-right">
         <div class="thumbnail">
             <img src="images/tumb.PNG" alt="...">
@@ -71,7 +70,7 @@
             </div>
         </div>
     </div>
-</div>
+</div><!-- Sidebar-->
 
 <div class="col-md-8 .col-md-4 ">
     <ul class="list-group">
