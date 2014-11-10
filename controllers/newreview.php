@@ -15,15 +15,14 @@ class newreview  extends Controller
 
     function index_ajax()
     {
-        echo "\$_REVIEW :<br>";
-        var_dump($_REVIEW);
+        echo "\$_POST:<br>";
+        var_dump($_POST);
     }
-
-    function index_review()
+    function index_post()
     {
-        echo "\$_REVIEW:<br>";
-        var_dump($_REVIEW);
-        $data = $_REVIEW['data'];
+        echo "\$_POST:<br>";
+        var_dump($_POST);
+        $data = $_POST['data'];
         $data['review_id'] = $this->params[0];
         insert('review', $data);
     }
