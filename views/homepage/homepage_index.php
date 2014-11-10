@@ -40,7 +40,7 @@
     <?foreach( $reviews as $review):?>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="images/tumb.PNG" alt="...">
+                <img src="<?= ($review['review_pic']) ?>" alt="...">
                 <div class="caption">
                     <h3> <?=$review['review_title']?></h3>
                     <p><?=$review['review_text']?></p>
