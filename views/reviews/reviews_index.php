@@ -15,7 +15,7 @@
     <?foreach( $news as $new):?><!-- Latest news posts -->
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="<?= ($new['new_pic']) ?>" alt="...">
+                <img src="<?= $new['new_pic'] ?>" alt="...">
                 <div class="caption">
                     <h3> <?=$new['new_title']?></h3>
                     <p><?=$new['new_text']?></p>

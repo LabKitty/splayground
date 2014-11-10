@@ -7,43 +7,8 @@
     </div>
 </nav>
 
-<div class="col-md-8 .col-md-4">
-    <ul class="list-group">
-        <li class="list-group-item">HOT VIDEOS</li>
-    </ul>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
 
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class=".col-xs-6 .col-md-4">
+<div class=".col-xs-6 .col-md-4"><!-- Sidebar -->
     <div class="pull-right">
         <div class="thumbnail">
             <img src="images/tumb.PNG" alt="..." class="img-circle">
@@ -58,7 +23,7 @@
             </div>
         </div>
     </div>
-</div>
+</div><!-- Sidebar -->
 
 <div class="col-md-8 .col-md-4">
 
@@ -66,35 +31,14 @@
         <li class="list-group-item">ALL VIDEOS </li>
     </ul>
 
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-
+<?foreach( $videos as $video):?><!-- Video posts -->
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+                    <iframe allowfullscreen="" src="<?= $video['video_link'] ?>" frameborder="0"></iframe>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-
-            </div>
-        </div>
-
-    </div>
+<? endforeach ?><!-- -Video posts -->
