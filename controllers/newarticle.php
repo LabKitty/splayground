@@ -7,11 +7,11 @@
  */
 
 class newarticle extends Controller
+{
+    function index()
     {
-        function index()
-        {
 
-        }
+    }
     function index_ajax()
     {
         echo "\$_POST:<br>";
