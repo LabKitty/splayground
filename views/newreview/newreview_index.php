@@ -1,6 +1,6 @@
 <h2>Add New Review</h2>
 <div  style="border-bottom: 1px solid; margin: 10px 0px 10px 0px;"></div>
-<form class="form-inline" method="post" role="form">
+<form class="form-inline" method="review" role="form">
     <div class="form-group">
         <input class="form-control" type="text" placeholder="Title" name="data[review_title]"/>
     </div>
