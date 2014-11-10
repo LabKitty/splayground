@@ -8,6 +8,14 @@
 </nav>
 
 
+
+
+<div class="col-md-8 .col-md-4">
+    <ul class="list-group">
+        <li class="list-group-item">ALL VIDEOS </li>
+    </ul>
+</div>
+
 <div class=".col-xs-6 .col-md-4"><!-- Sidebar -->
     <div class="pull-right">
         <div class="thumbnail">
@@ -25,20 +33,20 @@
     </div>
 </div><!-- Sidebar -->
 
-<div class="col-md-8 .col-md-4">
 
-    <ul class="list-group">
-        <li class="list-group-item">ALL VIDEOS </li>
-    </ul>
 
 <?foreach( $videos as $video):?><!-- Video posts -->
-    <div class="container">
-        <div class="row">
-            <div class="span8">
-                <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
-                    <iframe allowfullscreen="" src="<?= $video['video_link'] ?>" frameborder="0"></iframe>
-                </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="video-container">
+                <iframe width="300" height="168" src="http://www.youtube.com/embed/<?=$video['video_number']?>" frameborder="0" allowfullscreen></iframe>
             </div>
-        </div>
+
+            <div class="caption">
+                <a class="youtube" href="http://www.youtube.com/embed/4eYSpIz2FjU"> <h3><?=$video['video_title']?></h3></a>
+           </div>
+         </div>
     </div>
+
 <? endforeach ?><!-- -Video posts -->
+

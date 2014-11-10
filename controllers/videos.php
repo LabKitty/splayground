@@ -6,10 +6,8 @@
  * Time: 13:33
  */
 
-class videos extends Controller
-{
-    function index()
-    {
+class videos extends Controller {
+    function index(){
         $this->videos = get_all("SELECT * FROM video order by video_id DESC");
     }
 }

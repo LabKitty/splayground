@@ -54,7 +54,7 @@
     <div class="row">
         <div class="media">
             <a class="media-left media-middle" href="#">
-                 <img src="<?= ($review['review_pic']) ?>" alt="...">
+                 <img src="<?= $review['review_pic'] ?>" alt="...">
             </a>
 
             <div class="media-body">
