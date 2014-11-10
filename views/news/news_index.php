@@ -46,7 +46,7 @@
 <div class=".col-xs-6 .col-md-4">
     <div class="pull-right">
         <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
+            <img src="images/tumb.PNG" alt="..." class="img-circle">
             <div class="caption">
                 <h3>Thumbnail label</h3>
                 <ul class="list-group">

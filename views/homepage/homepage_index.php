@@ -58,7 +58,7 @@
 <div class=".col-xs-6 .col-md-4"><!-- Sidebar-->
     <div class="pull-right">
         <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
+            <img src="images/tumb.PNG" alt="..." class="img-circle">
             <div class="caption">
                 <h3>Thumbnail label</h3>
                 <ul class="list-group">
@@ -80,7 +80,7 @@
 <?foreach( $posts as $post):?>
     <div class="col-sm-5 .col-md-6">
         <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="...">
+            <img src="<?= ($post['post_pic']) ?>" alt="...">
             <div class="caption">
                 <h3> <?=$post['post_title']?></h3>
                 <p><?=$post['post_text']?></p>
