@@ -39,14 +39,14 @@
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <div class="video-container">
-                <iframe width="300" height="168" src="http://www.youtube.com/embed/<?=$video['video_number']?>" frameborder="0" allowfullscreen></iframe>
+                <iframe width="262" height="175" src="http://www.youtube.com/embed/<?=$video['video_number']?>" frameborder="0" allowfullscreen></iframe>
             </div>
-
             <div class="caption">
-                <a class="youtube" href="http://www.youtube.com/embed/4eYSpIz2FjU"> <h3><?=$video['video_title']?></h3></a>
-           </div>
-         </div>
-    </div>
+                <h3> <?=$video['video_title']?></h3>
+                <p><?=$video['video_text']?></p>
 
+            </div>
+        </div>
+    </div>
 <? endforeach ?><!-- -Video posts -->
 
