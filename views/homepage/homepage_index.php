@@ -40,7 +40,7 @@
     <?foreach( $reviews as $review):?>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="<?= ($review['review_pic']) ?>" alt="...">
+                <img src="assets/images/tumb.PNG" alt="..." >
                 <div class="caption">
                     <h3> <?=$review['review_title']?></h3>
                     <p><?=$review['review_text']?></p>
@@ -58,7 +58,7 @@
 <div class=".col-xs-6 .col-md-4"><!-- Sidebar-->
     <div class="pull-right">
         <div class="thumbnail">
-            <img src="images/tumb.PNG" alt="..." class="img-circle">
+            <img src="assets/images/tumb.PNG" alt="..." class="img-circle">
             <div class="caption">
                 <h3>Thumbnail label</h3>
                 <ul class="list-group">
@@ -77,20 +77,19 @@
         <li class="list-group-item">Articles</li>
     </ul>
 
-<?foreach( $posts as $post):?>
-    <div class="col-sm-5 .col-md-6">
-        <div class="thumbnail">
-            <img src="<?= ($post['post_pic']) ?>" alt="...">
-            <div class="caption">
-                <h3> <?=$post['post_title']?></h3>
-                <p><?=$post['post_text']?></p>
+    <?foreach( $posts as $post):?>
+        <div class="col-sm-5 .col-md-6">
+            <div class="thumbnail">
+                <img src="<?= $post['post_pic'] ?>" alt="...">
+                <div class="caption">
+                    <h3> <?=$post['post_title']?></h3>
+                    <p><?=$post['post_text']?></p>
 
+                </div>
             </div>
+
         </div>
-
-    </div>
-<? endforeach ?>
-
+    <? endforeach ?>
 </div>
 
 

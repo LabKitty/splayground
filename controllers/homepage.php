@@ -6,5 +6,7 @@ class homepage extends Controller{
         $this->reviews = get_all("SELECT * FROM review order by review_id desc limit 3");
     }
 
+
+
 }
 ?>

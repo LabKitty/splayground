@@ -1,43 +1,17 @@
-<h2>Add new article</h2>
-<form class="form-horizontal">
-    <fieldset>
-
-        <!-- Form Name -->
-        <legend>Form Name</legend>
-
-        <!-- Text input-->
-        <div class="control-group">
-            <label class="control-label" for="textinput">Pealkiri</label>
-            <div class="controls">
-                <input id="textinput" name="textinput" type="text" placeholder="Pealkiri" class="input-xlarge">
-
-            </div>
-        </div>
-
-        <!-- Textarea -->
-        <div class="control-group">
-            <label class="control-label" for="textarea"> Kirjeldus</label>
-            <div class="controls">
-                <textarea id="textarea" name="textarea" placeholder="Palun 500 tähemärki"></textarea>
-            </div>
-        </div>
-
-
-        <div class="control-group">
-            <label class="control-label" for="textinput">Pildi link</label>
-            <div class="controls">
-                <input id="textinput" name="textinput" type="text" placeholder="Lisa pildi link" class="input-xlarge">
-
-            </div>
-        </div>
-
-        <!-- Button -->
-        <div class="control-group">
-            <label class="control-label" for="sumbmit"></label>
-            <div class="controls">
-                <button id="sumbmit" name="sumbmit" class="btn btn-primary">ok</button>
-            </div>
-        </div>
-
-    </fieldset>
+<h2>Add New Article</h2>
+<div  style="border-bottom: 1px solid; margin: 10px 0px 10px 0px;"></div>
+<form class="form-inline" method="post" role="form">
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Pealkiri" name="data[post_title]"/>
+    </div>
+    <br>
+    <textarea name="data[post_text]" style="width: 500px; height:150px; margin: 10px 0px 10px 0px; border-radius: 5px;" ></textarea>
+    <br>
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Link" name="data[post_pic]" style="margin: 0px 0px 10px 0px"/>
+    </div>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-default" type="submit">Add</button>
+    </div>
 </form>
