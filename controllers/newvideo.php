@@ -12,5 +12,17 @@ class newvideo extends Controller
     {
 
     }
-
+    function index_ajax()
+    {
+        echo "\$_POST:<br>";
+        var_dump($_POST);
+    }
+    function index_post()
+    {
+        echo "\$_POST:<br>";
+        var_dump($_POST);
+        $data = $_POST['data'];
+        $data['video_id'] = $this->params[0];
+        insert('video', $data);
+    }
 }
