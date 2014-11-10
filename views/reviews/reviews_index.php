@@ -9,16 +9,16 @@
 
 <div class="col-md-8 .col-md-4">
     <ul class="list-group">
-        <li class="list-group-item">LATEST REVIEWS</li>
+        <li class="list-group-item">LATEST NEWS</li>
     </ul>
 
-    <?foreach( $reviews as $review):?>
+    <?foreach( $news as $new):?>
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <img src="<?= ($review['review_pic']) ?>" alt="...">
+            <img src="<?= ($new['new_pic']) ?>" alt="...">
             <div class="caption">
-                <h3> <?=$review['review_title']?></h3>
-                <p><?=$review['review_text']?></p>
+                <h3> <?=$new['new_title']?></h3>
+                <p><?=$new['new_text']?></p>
 
             </div>
         </div>
