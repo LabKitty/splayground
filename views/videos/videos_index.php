@@ -36,7 +36,7 @@
 
 
 <?foreach( $videos as $video):?><!-- Video posts -->
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-5 .col-md-6">
         <div class="thumbnail">
             <div class="video-container">
                 <iframe width="262" height="175" src="http://www.youtube.com/embed/<?=$video['video_number']?>" frameborder="0" allowfullscreen></iframe>
