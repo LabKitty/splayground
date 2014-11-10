@@ -71,7 +71,7 @@ Cras justo odio
         <?foreach( $news as $new):?>
             <div class="media">
                 <a class="media-left media-middle" href="#">
-                    <img src="images/tumb.PNG" alt="...">
+                    <img src="<?= ($new['new_pic']) ?>" alt="...">
                 </a>
                 <div class="media-body">
                     <h4 class="media-heading"><?=$new['new_title']?></h4>
