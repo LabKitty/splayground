@@ -17,7 +17,7 @@
             <div class="thumbnail">
                 <img src="<?= $new['new_pic'] ?>" alt="...">
                 <div class="caption">
-                    <h3> <?=$new['new_title']?></h3>
+                    <h3><a href="<?= BASE_URL ?>news/view/<?= $new['new_id'] ?>"> <?=$new['new_title']?></a></h3>
                     <p><?=$new['new_text']?></p>
 
                 </div>
@@ -58,7 +58,7 @@
             </a>
 
             <div class="media-body">
-                    <h4> <?=$review['review_title']?></h4>
+                    <h4><a href="<?= BASE_URL ?>reviews/view/<?= $review['review_id'] ?>"> <?=$review['review_title']?></a></h4>
                      <p><?=$review['review_text']?></p>
             </div>
         </div>
