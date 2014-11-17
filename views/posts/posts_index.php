@@ -28,7 +28,7 @@
         <?foreach( $posts as $post):?>
             <div class="media">
                 <a class="media-left media-middle" href="#">
-                    <img src="<?= ($post['post_pic']) ?>" alt="...">
+                    <img src="<?=$post['post_pic']?>" alt="...">
                 </a>
                 <div class="media-body">
 

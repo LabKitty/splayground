@@ -6,7 +6,6 @@
  * Time: 10:49
  */
 
-
 class posts extends Controller
 {
     function index()

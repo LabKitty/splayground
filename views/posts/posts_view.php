@@ -1,6 +1,6 @@
 <div class="span8">
 
-    <img src="<?= $post['post_pic'] ?>" alt="...">
+    <img src="<?= $post['post_pic'] ?>">
     <h1><?=$post['post_title']?></h1>
     <p><?=$post['post_text']?></p>
 
