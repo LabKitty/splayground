@@ -77,7 +77,7 @@
             <div class="thumbnail">
                 <img src="<?= $post['post_pic'] ?>" alt="...">
                 <div class="caption">
-                    <h3> <?=$post['post_title']?></h3>
+                    <h3> <a href="<?= BASE_URL ?>posts/view/<?= $post['post_id'] ?>"> <?=$post['post_title']?></a></h3>
                     <p><?=$post['post_text']?></p>
                 </div>
             </div>
