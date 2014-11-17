@@ -1,21 +1,21 @@
 <div class="span8">
 
-    <img src="<?= $review['review_pic'] ?>" alt="...">
-    <h1><?=$review['review_title']?></h1>
-    <p><?=$review['review_text']?></p>
+    <img src="<?= $new['new_pic'] ?>" alt="...">
+    <h1><?=$new['new_title']?></h1>
+    <p><?=$new['new_text']?></p>
 
     <?foreach ($comments as $comment): ?><!-- Comments -->
-        <div class="commentBox">
-            <ul class="commentList">
-                <li>
-                    <div class="commentText">
-                        <?=$comment['comment_created']?>
-                        <?=$comment['comment_author']?>
-                        <p><?=$comment['comment_text']?></p>
-                    </div>
-                </li>
-            </ul>
-         </div>
+    <div class="commentBox">
+        <ul class="commentList">
+            <li>
+                <div class="commentText">
+                    <?=$comment['comment_created']?>
+                    <?=$comment['comment_author']?>
+                    <p><?=$comment['comment_text']?></p>
+                </div>
+            </li>
+        </ul>
+    </div>
     <? endforeach ?><!-- Comments -->
 
     <form class="form-inline" method="post" role="form"><!-- Comments insert  -->

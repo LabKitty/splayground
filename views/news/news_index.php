@@ -74,7 +74,8 @@ Cras justo odio
                     <img src="<?= ($new['new_pic']) ?>" alt="...">
                 </a>
                 <div class="media-body">
-                    <h4 class="media-heading"><?=$new['new_title']?></h4>
+
+                    <h4 class="media-heading"><a href="<?= BASE_URL ?>news/view/<?= $new['new_id'] ?>"> <?=$new['new_title']?></a></h4>
                     <p><?=$new['new_text']?></p>
                 </div>
             </div>

@@ -79,10 +79,8 @@
                 <div class="caption">
                     <h3> <?=$post['post_title']?></h3>
                     <p><?=$post['post_text']?></p>
-
                 </div>
             </div>
-
         </div>
     <? endforeach ?>
 </div>
