@@ -9,6 +9,10 @@ class reviews extends Controller{
     {
         $review_id = $this ->params[0];
         $this->review = get_first("SELECT * FROM review NATURAL JOIN user WHERE review_id='$review_id'");
+        $this->comments = get_all("SELECT * FROM comment NATURAL JOIN review WHERE review_id='$review_id'");
     }
+
+
+
 }
 ?>
