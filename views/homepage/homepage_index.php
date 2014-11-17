@@ -75,7 +75,7 @@
     <?foreach( $posts as $post):?>
         <div class="col-sm-5 .col-md-6">
             <div class="thumbnail">
-                <img src="<?= $post['post_pic'] ?>" alt="...">
+                <img src="<?=$post['post_pic']?>" alt="...">
                 <div class="caption">
                     <h3> <a href="<?= BASE_URL ?>posts/view/<?= $post['post_id'] ?>"> <?=$post['post_title']?></a></h3>
                     <p><?=$post['post_text']?></p>
