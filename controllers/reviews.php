@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Nika
+ * Date: 6.11.2014
+ * Time: 10:49
+ */
 
 class reviews extends Controller
 {
@@ -18,9 +24,17 @@ class reviews extends Controller
     function view_post()
     {
         $data = $_POST['data'];
+        $data['review_id'] = $this->params[0];
+        insert('comment', $data);
+    }
+
+    function index_post()
+    {
+        $data = $_POST['data'];
         $data['comment_id'] = $this->params[0];
         insert('comment', $data);
     }
+
 
 }
 ?>

@@ -23,6 +23,13 @@ class news extends Controller {
     function view_post()
     {
         $data = $_POST['data'];
+        $data['new_id'] = $this->params[0];
+        insert('comment', $data);
+    }
+
+    function index_post()
+    {
+        $data = $_POST['data'];
         $data['comment_id'] = $this->params[0];
         insert('comment', $data);
     }

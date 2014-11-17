@@ -1,7 +1,7 @@
 <nav class="nnavbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-                <h1>LATEST NEWS</h1>
+            <h1>LATEST ARTICLES</h1>
             </a>
         </div>
     </div>
@@ -16,8 +16,8 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="badge">14</span>
-Cras justo odio
-</li>
+                        Cras justo odio
+                    </li>
                 </ul>
             </div>
         </div>
@@ -25,19 +25,19 @@ Cras justo odio
 </div>
 
 <div class="col-md-8 .col-md-4">
-        <?foreach( $news as $new):?>
+        <?foreach( $posts as $post):?>
             <div class="media">
                 <a class="media-left media-middle" href="#">
-                    <img src="<?= ($new['new_pic']) ?>" alt="...">
+                    <img src="<?= ($post['post_pic']) ?>" alt="...">
                 </a>
                 <div class="media-body">
 
-                    <h4 class="media-heading"><a href="<?= BASE_URL ?>news/view/<?= $new['new_id'] ?>"> <?=$new['new_title']?></a></h4>
-                    <p><?=$new['new_text']?></p>
+                    <h4 class="media-heading"><a href="<?= BASE_URL ?>posts/view/<?= $post['post_id'] ?>"> <?=$post['post_title']?></a></h4>
+                    <p><?=$post['post_text']?></p>
                 </div>
             </div>
 
         <? endforeach ?>
 
 
-</div>
+    </div>
