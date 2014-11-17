@@ -49,5 +49,4 @@
             </div>
         </div>
     <? endforeach ?><!-- -Video posts -->
-
 </div>

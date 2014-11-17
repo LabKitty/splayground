@@ -40,20 +40,15 @@
     <?foreach( $reviews as $review):?>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="assets/images/tumb.PNG" alt="..." >
+                <img src="<?= $review['review_pic'] ?>" alt="...">
                 <div class="caption">
-                    <h3> <?=$review['review_title']?></h3>
+                    <h3><a href="<?= BASE_URL ?>reviews/view/<?= $review['review_id'] ?>"> <?=$review['review_title']?></a></h3>
                     <p><?=$review['review_text']?></p>
-
                 </div>
             </div>
-
         </div>
-    <? endforeach ?><!-- Latest review posts -->
-
-
-
-</div>
+    <? endforeach ?>
+</div><!-- Latest review posts -->
 
 <div class=".col-xs-6 .col-md-4"><!-- Sidebar-->
     <div class="pull-right">
