@@ -3,10 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 17, 2014 at 01:11 PM
+-- Generation Time: Nov 17, 2014 at 09:19 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -25,23 +26,16 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `comment_text` text NOT NULL,
   `comment_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `comment_id` int(11) unsigned NOT NULL,
-  `post_id` int(10) unsigned NOT NULL,
-  `review_id` int(10) unsigned NOT NULL,
-  `new_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+  `post_id` int(10) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`comment_author`, `comment_text`, `comment_created`, `comment_id`, `post_id`, `review_id`, `new_id`) VALUES
-('News5', 'Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped by parents with certain overflow properties or appear out of bounds of the viewport. Address these issues on your own as they arise.', '2014-11-17 09:06:15', 9, 0, 0, 5),
-('News5', 'Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped by parents with certain overflow properties or appear out of bounds of the viewport. Address these issues on your own as they arise.', '2014-11-17 09:06:24', 10, 0, 0, 5),
-('Reviews5', 'Sometimes even best family traditions can turn into nightmare, and in Grim Tales: Color of Fright Collector’s Edition Game for PC that happened to the Gray family!', '2014-11-17 09:06:31', 11, 0, 5, 0),
-('Reviews5', 'Sometimes even best family traditions can turn into nightmare, and in Grim Tales: Color of Fright Collector’s Edition Game for PC that happened to the Gray family!', '2014-11-17 09:06:34', 12, 0, 5, 0),
-('Reviews5', 'Reviews5', '2014-11-17 09:06:46', 13, 4, 0, 0),
-('Reviews5', 'Reviews5', '2014-11-17 09:06:48', 14, 4, 0, 0),
-('Reviews5', 'Reviews5', '2014-11-17 09:08:29', 15, 4, 0, 0);
+INSERT INTO `comment` (`comment_author`, `comment_text`, `comment_created`, `comment_id`, `post_id`) VALUES
+('Lilleke', 'Tere, ja äitäh.', '2014-11-17 07:02:15', 1, 0),
+('test', 'test', '2014-11-17 07:20:15', 5, 0);
 
 -- --------------------------------------------------------
 
@@ -80,18 +74,19 @@ CREATE TABLE IF NOT EXISTS `post` (
   `post_desc` varchar(100) NOT NULL,
   `post_text` varchar(500) NOT NULL,
   `post_img` varchar(255) NOT NULL,
-  `post_pic` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `post_pic` varchar(255) NOT NULL,
+  `user_id` int(10) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `post`
 --
 
-INSERT INTO `post` (`post_id`, `post_title`, `post_desc`, `post_text`, `post_img`, `post_pic`) VALUES
-(1, 'Test', '', ' Simple way to get data uri of any image. An excellent tweet popped up on my twitter wall which shows how to get the data uri of any', '', 'http://i.imgur.com/ql2tROh.png'),
-(2, 'Test2', '', ' Simple way to get data uri of any image. An excellent tweet popped up on my twitter wall which shows how to get the data uri of any', '', 'http://i.imgur.com/ql2tROh.png'),
-(3, 'Test3', '', 'The end result would be a page with two lists. The first list contains only one post -- the most recent post from the ''feature'' category. ', '', 'http://i.imgur.com/ql2tROh.png'),
-(4, 'Test4', '', 'The end result would be a page with two lists. The first list contains only one post -- the most recent post from the ''feature'' category.', '', 'http://i.imgur.com/ql2tROh.png');
+INSERT INTO `post` (`post_id`, `post_title`, `post_desc`, `post_text`, `post_img`, `post_pic`, `user_id`) VALUES
+(1, 'Test', '', ' Simple way to get data uri of any image. An excellent tweet popped up on my twitter wall which shows how to get the data uri of any', '', 'http://i.imgur.com/ql2tROh.png', 0),
+(2, 'Test2', '', ' Simple way to get data uri of any image. An excellent tweet popped up on my twitter wall which shows how to get the data uri of any', '', 'http://i.imgur.com/ql2tROh.png', 0),
+(3, 'Test3', '', 'The end result would be a page with two lists. The first list contains only one post -- the most recent post from the ''feature'' category. ', '', 'http://i.imgur.com/ql2tROh.png', 0),
+(4, 'Test4', '', 'The end result would be a page with two lists. The first list contains only one post -- the most recent post from the ''feature'' category.', '', 'http://i.imgur.com/ql2tROh.png', 0);
 
 -- --------------------------------------------------------
 
@@ -214,7 +209,7 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-MODIFY `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `new`
 --
@@ -224,7 +219,7 @@ MODIFY `new_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-MODIFY `post_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `post_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `review`
 --
@@ -239,4 +234,4 @@ MODIFY `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;SET FOREIGN_KEY_CHECKS=1;
