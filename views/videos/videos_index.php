@@ -31,7 +31,7 @@
                     <iframe width="262" height="175" src="http://www.youtube.com/embed/<?=$video['video_number']?>" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="caption">
-                    <h3> <?=$video['video_title']?></h3>
+                    <h3><?=$video['video_title']?></h3>
                     <p><?=$video['video_text']?></p>
 
                 </div>
