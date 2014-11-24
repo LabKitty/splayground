@@ -1,11 +1,3 @@
-<nav class="nnavbar navbar-inverse" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <h1>ALL REVIEWS</h1>
-            </a>
-        </div>
-    </div>
-</nav>
 
 <div class="col-md-8 .col-md-4">
     <ul class="list-group">
@@ -32,7 +24,7 @@
         <div class="thumbnail">
             <img src="images/tumb.PNG" alt="..." class="img-circle">
             <div class="caption">
-                <h3>Thumbnail label</h3>
+                <h3>Matches</h3>
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="badge">14</span>

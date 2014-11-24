@@ -1,13 +1,10 @@
-<nav class="nnavbar navbar-inverse" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <h1>LATEST ARTICLES</h1>
-            </a>
-        </div>
-    </div>
-</nav>
+<div class="col-md-8 .col-md-4">
+    <ul class="list-group">
+        <li class="list-group-item">LATEST </li>
+    </ul>
+</div>
 
-<div class=".col-xs-6 .col-md-4">
+<div class=".col-xs-6 .col-md-4"><!-- Sidebar -->
     <div class="pull-right">
         <div class="thumbnail">
             <img src="images/tumb.PNG" alt="..." class="img-circle">
@@ -22,7 +19,7 @@
             </div>
         </div>
     </div>
-</div>
+</div><!-- Sidebar -->
 
 <div class="col-md-8 .col-md-4">
         <?foreach( $posts as $post):?>
@@ -31,13 +28,9 @@
                     <img src="<?=$post['post_pic']?>" alt="...">
                 </a>
                 <div class="media-body">
-
                     <h4 class="media-heading"><a href="<?= BASE_URL ?>posts/view/<?= $post['post_id'] ?>"> <?=$post['post_title']?></a></h4>
                     <p><?=$post['post_text']?></p>
                 </div>
             </div>
-
         <? endforeach ?>
-
-
-    </div>
+</div>

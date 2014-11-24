@@ -1,90 +1,82 @@
-<div class="row">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="http://placehold.it/1200x315" alt="...">
-                <div class="carousel-caption">
-                    <h3>Caption Text</h3>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://placehold.it/1200x315" alt="...">
-                <div class="carousel-caption">
-                    <h3>Caption Text</h3>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://placehold.it/1200x315" alt="...">
-                <div class="carousel-caption">
-                    <h3>Caption Text</h3>
-                </div>
-            </div>
-        </div>
-
-
-    </div> <!-- Carousel -->
-</div>
-
-<div class="col-md-8 .col-md-4"><!-- Latest review posts -->
-    <ul class="list-group">
-        <li class="list-group-item">Latest reviews</li>
-    </ul>
-    <?foreach( $reviews as $review):?>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="<?= $review['review_pic'] ?>" alt="...">
-                <div class="caption">
-                    <h3><a href="<?= BASE_URL ?>reviews/view/<?= $review['review_id'] ?>"> <?=$review['review_title']?></a></h3>
-                    <p><?=$review['review_text']?></p>
-                </div>
-            </div>
-        </div>
-    <? endforeach ?>
-</div><!-- Latest review posts -->
-
-<div class=".col-xs-6 .col-md-4"><!-- Sidebar-->
+<div class=".col-xs-6 .col-sm-4"><!-- Sidebar-->
     <div class="pull-right">
         <div class="thumbnail">
-            <img src="assets/images/tumb.PNG" alt="..." class="img-circle">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
+
+            <div class="caption"><!-- Broadcast-->
+                <h3>Broadcast</h3>
+                <ul class="list-group">
+                    <?foreach( $videos as $video):?>
+                        <li class="list-group-item"><?= $video['video_title'] ?></li>
+                    <? endforeach ?>
+                </ul>
+            </div><!-- Broadcast-->
+
+            <div class="caption"><!-- Matches-->
+                <h3>Matches</h3>
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="badge">14</span>
                         Cras justo odio
                     </li>
                 </ul>
-            </div>
+            </div><!-- Matches-->
+
         </div>
     </div>
 </div><!-- Sidebar-->
 
-<div class="col-md-8 .col-md-4 ">
-    <ul class="list-group">
-        <li class="list-group-item">Articles</li>
-    </ul>
+<div class="row"><!-- Left Side Content -->
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"><!-- Carousel -->
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
 
-    <?foreach( $posts as $post):?>
-        <div class="col-sm-5 .col-md-6">
-            <div class="thumbnail">
-                <img src="<?=$post['post_pic']?>" alt="...">
-                <div class="caption">
+            <!-- Wrapper for slides -->
+            <div class=".col-xs-6 .col-md-4">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://placehold.it/1200x315" alt="...">
+                    <div class="carousel-caption">
+                        <h3>Caption Text</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://placehold.it/1200x315" alt="...">
+                    <div class="carousel-caption">
+                        <h3>Caption Text</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://placehold.it/1200x315" alt="...">
+                    <div class="carousel-caption">
+                        <h3>Caption Text</h3>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div> <!-- Carousel -->
+    </div>
+
+    <div class="col-md-8 .col-md-4"><!-- Posts -->
+        <?foreach( $posts as $post):?>
+            <div class="media">
+                <a class="media-left media-middle" href="#">
+                    <img src="<?=$post['post_pic']?>" alt="...">
+                </a>
+                <div class="media-body">
                     <h3> <a href="<?= BASE_URL ?>posts/view/<?= $post['post_id'] ?>"> <?=$post['post_title']?></a></h3>
                     <p><?=$post['post_text']?></p>
                 </div>
             </div>
-        </div>
-    <? endforeach ?>
-</div>
+        <? endforeach ?>
+    </div><!-- Posts -->
 
+</div><!-- Left Side Content -->
 
 <script>
     $('.carousel').carousel({

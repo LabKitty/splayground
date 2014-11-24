@@ -33,31 +33,48 @@
 <body>
 
 <!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#"><?=PROJECT_NAME?></a>
-		</div>
+<nav class="navbar navbar-inverse navbar-fixed-top  " role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><?=PROJECT_NAME?></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li role="presentation" <?= $controller=="homepage"?'class="active"':"" ?>><a href="homepage">Home</a></li>
+                <li role="presentation" <?= $controller=="news"?'class="active"':"" ?>><a href="news">News</a></li>
+                <li role="presentation"<?= $controller=="heros"?'class="active"':"" ?>><a href="heros">Hero</a></li>
+                <li role="presentation"<?= $controller=="reviews"?'class="active"':"" ?>><a href="reviews">Reviews</a></li>
+                <li role="presentation"<?= $controller=="videos"?'class="active"':"" ?>><a href="videos">Videos</a></li>
+                <li role="presentation"<?= $controller=="coverage"?'class="active"':"" ?>><a href="coverage">Coverage</a></li>
+
+            </ul>
+           <!---<form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form> -->
+            <ul class="nav navbar-nav navbar-right">
 
 
-		<ul class="nav nav-pills" role="tablist">
-             <li role="presentation" <?= $controller=="homepage"?'class="active"':"" ?>><a href="homepage">Home</a></li>
-             <li role="presentation" <?= $controller=="news"?'class="active"':"" ?>><a href="news">News</a></li>
-             <li role="presentation"<?= $controller=="reviews"?'class="active"':"" ?>><a href="reviews">Reviews</a></li>
-            <li role="presentation"<?= $controller=="videos"?'class="active"':"" ?>><a href="videos">Videos</a></li>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<?= BASE_URL ?><?= $auth->logged_in == true? 'Logout' : 'Login' ?>"><?=$auth->logged_in == true? 'Logout' : 'Login' ?></a></li>
-                </ul>
+                        <li><a href="<?= BASE_URL ?><?= $auth->logged_in == true? 'Logout' : 'Login' ?>"><?=$auth->logged_in == true? 'Logout' : 'Login' ?></a></li>
 
-        </ul>
-		</div><!--/.nav nav-pills -->
-	</div>
-</div>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
 
 <div class="container">
 

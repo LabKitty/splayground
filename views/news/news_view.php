@@ -1,8 +1,17 @@
 <div class="span8">
-
-    <img src="<?= $new['new_pic'] ?>" alt="...">
     <h1><?=$new['new_title']?></h1>
-    <p><?=$new['new_text']?></p>
+    <div class="media">
+        <a class="media-left" href="#">
+            <img src="<?= $new['new_pic'] ?>" alt="...">
+        </a>
+        <div class="media-body">
+            <p><?=$new['new_desc']?></p>
+            <p><?=$new['new_text']?></p>
+        </div>
+    </div>
+
+
+
 
     <?foreach ($comments as $comment): ?><!-- Comments -->
     <div class="commentBox">
