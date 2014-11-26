@@ -66,7 +66,7 @@
                          <div class="col-md-2">
                             <div class="media">
                                 <a class="media-left" href="#">
-                                    <a href="<?= BASE_URL ?>heros/view/<?= $hero['hero_id'] ?>"> <img src="<?=$hero['hero_pic']?>"></a
+                                    <a href="<?= BASE_URL ?>heros/view/<?= $hero['hero_id'] ?>"> <img src="<?=$hero['hero_pic']?>"></a>
                                 </a>
                             </div>
                           </div>
@@ -79,7 +79,7 @@
                          <div class="col-md-2">
                             <div class="media">
                                 <a class="media-left" href="#">
-                                    <a href="<?= BASE_URL ?>heros/view/<?= $hero['hero_id'] ?>"> <img src="<?=$hero['hero_pic']?>"></a
+                                    <a href="<?= BASE_URL ?>heros/view/<?= $hero['hero_id'] ?>"> <img src="<?=$hero['hero_pic']?>"></a>
                                 </a>
                             </div>
                          </div>
@@ -92,7 +92,7 @@
                         <div class="col-md-2">
                             <div class="media">
                                 <a class="media-left" href="#">
-                                    <a href="<?= BASE_URL ?>heros/view/<?= $hero['hero_id'] ?>"> <img src="<?=$hero['hero_pic']?>"></a
+                                    <a href="<?= BASE_URL ?>heros/view/<?= $hero['hero_id'] ?>"> <img src="<?=$hero['hero_pic']?>"></a>
                                 </a>
                             </div>
                         </div>

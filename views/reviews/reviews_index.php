@@ -10,7 +10,7 @@
                 <img src="<?= $new['new_pic'] ?>" alt="...">
                 <div class="caption">
                     <h3><a href="<?= BASE_URL ?>news/view/<?= $new['new_id'] ?>"> <?=$new['new_title']?></a></h3>
-                    <p><?=$new['new_text']?></p>
+                    <p><?=$new['new_desc']?></p>
 
                 </div>
             </div>

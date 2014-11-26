@@ -1,5 +1,4 @@
 
-
 <div class="span8">
 
 <h1><?=$hero['hero_title']?></h1>
