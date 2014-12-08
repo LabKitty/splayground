@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 26, 2014 at 09:55 AM
+-- Generation Time: Dec 08, 2014 at 08:05 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `forumdata` (
   `forum_desc` varchar(255) NOT NULL,
   `forum_stat` varchar(50) NOT NULL,
   `forumlastpost` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forumdata`
@@ -89,6 +89,28 @@ INSERT INTO `forumdata` (`forumdata_id`, `forum_title`, `forum_desc`, `forum_sta
   (1, 'Community', 'Whats happening in the Dota world that everyone ne', '', ''),
   (2, 'Broadcast Discussion', 'Talk about broadcasts!', '', ''),
   (3, 'Off topic and Help', 'Ah, the great outdoors!', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forums`
+--
+
+CREATE TABLE IF NOT EXISTS `forums` (
+  `forum_id` int(11) NOT NULL,
+  `forum_title` varchar(50) NOT NULL,
+  `forumthreadpost` varchar(50) NOT NULL,
+  `forumlastpost` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forums`
+--
+
+INSERT INTO `forums` (`forum_id`, `forum_title`, `forumthreadpost`, `forumlastpost`) VALUES
+  (1, 'Community', 'Threads/Posts', 'Last Post'),
+  (2, 'Competitive dota', 'Threads/Posts', 'Last Post'),
+  (3, 'Support', 'Threads/Posts', 'Last Post');
 
 -- --------------------------------------------------------
 
@@ -294,6 +316,12 @@ ALTER TABLE `forumdata`
 ADD PRIMARY KEY (`forumdata_id`);
 
 --
+-- Indexes for table `forums`
+--
+ALTER TABLE `forums`
+ADD PRIMARY KEY (`forum_id`);
+
+--
 -- Indexes for table `hero`
 --
 ALTER TABLE `hero`
@@ -359,7 +387,12 @@ MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `forumdata`
 --
 ALTER TABLE `forumdata`
-MODIFY `forumdata_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `forumdata_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `forums`
+--
+ALTER TABLE `forums`
+MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `hero`
 --

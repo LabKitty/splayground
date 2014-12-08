@@ -55,7 +55,7 @@
                 <li role="presentation"<?= $controller=="reviews"?'class="active"':"" ?>><a href="reviews">Reviews</a></li>
                 <li role="presentation"<?= $controller=="videos"?'class="active"':"" ?>><a href="videos">Videos</a></li>
                 <li role="presentation"<?= $controller=="coverage"?'class="active"':"" ?>><a href="coverage">Coverage</a></li>
-                <li role="presentation"<?= $controller=="forum"?'class="active"':"" ?>><a href="forum">Forum</a></li>
+                <li role="presentation"<?= $controller=="forums"?'class="active"':"" ?>><a href="forum">Forum</a></li>
             </ul>
            <!---<form class="navbar-form navbar-left" role="search">
                 <div class="form-group">

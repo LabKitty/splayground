@@ -1,24 +1,45 @@
+<div class="panel panel-default">
+    <?foreach( $forum_1 as $forum):?><!-- Forum title -->
+        <div class="panel-heading"><?=$forum['forum_title']?></div>
+            <div class="panel-body"><!-- Subforums-->
+                 <?foreach( $forumdata_1 as $forumdata):?>
+                     <li class="list-group-item">
+                         <a href="<?= BASE_URL ?>forum/display/<?= $forum['forum_id'] ?>"><?=$forumdata['forum_title']?></a>
+                         <br>
+                         <h6> <?=$forumdata['forum_desc']?></h6>
+                     </li>
+                 <? endforeach ?>
+             </div><!-- Subforums-->
+    <? endforeach ?>
+</div>
 
 <div class="panel panel-default">
-  <div class="panel-heading"><?=$forums['forum_title']?></div>
-      <div class="panel-body">
-          <li class="list-group-item"><?=$forumdata['forumdata_title']?></li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-
-    </div>
-
+    <?foreach( $forum_2 as $forum):?><!-- Forum title -->
+        <div class="panel-heading"><?=$forum['forum_title']?></div>
+            <div class="panel-body"><!-- Subforums-->
+                <?foreach( $forumdata_2 as $forumdata):?>
+                    <li class="list-group-item">
+                        <a href="<?= BASE_URL ?>forum/display/<?= $forum['forum_id'] ?>"><?=$forumdata['forum_title']?></a>
+                            <br>
+                         <h6> <?=$forumdata['forum_desc']?></h6>
+                    </li>
+                <? endforeach ?>
+            </div><!-- Subforums-->
+    <? endforeach ?><!-- Forum title -->
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body">
-Panel content
+    <?foreach( $forum_3 as $forum):?><!-- Forum title -->
+         <div class="panel-heading"><?=$forum['forum_title']?></div>
+            <div class="panel-body"><!-- Subforums-->
+               <?foreach( $forumdata_3 as $forumdata):?>
+                   <li class="list-group-item">
+                       <a href="<?= BASE_URL ?>forum/display/<?= $forum['forum_id'] ?>"><?=$forumdata['forum_title']?></a>
+                       <br>
+                       <h6> <?=$forumdata['forum_desc']?></h6>
+                   </li>
+                <? endforeach ?>
+             </div><!-- Subforums-->
+    <? endforeach ?><!-- Forum title -->
 </div>
-</div>
-
 
