@@ -10,6 +10,7 @@ class forum extends Controller
 {
     function index()
     {
+
         $this->forum = get_all("SELECT * FROM forum order by forum_id DESC ");
         $this->forum_1 = get_all("SELECT * FROM forum where forum_attribut = 1 ");
         $this->forum_2 = get_all("SELECT * FROM forum where forum_attribut = 2 ");
@@ -31,8 +32,8 @@ class forum extends Controller
 
     function display()
     {
-        $forumpost_id = $this->params[0];
-        $this->forumpost = get_all("SELECT * FROM forumpost NATURAL JOIN user WHERE forumpost_id='$forumpost_id'");
+        $forumdata_id = $this->params[0];
+        $this->forumpost = get_all("SELECT * FROM forumpost NATURAL JOIN forumdata WHERE forumdata_id='$forumdata_id'");
 
     }
 
