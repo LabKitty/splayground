@@ -15,7 +15,7 @@ class forum extends Controller
         $this->forum_1 = get_all("SELECT * FROM forum where forum_attribut = 1 ");
         $this->forum_2 = get_all("SELECT * FROM forum where forum_attribut = 2 ");
         $this->forum_3 = get_all("SELECT * FROM forum where forum_attribut = 3 ");
-
+        $this->forumdata = get_all("SELECT * FROM forumdata");
         $this->forumdata_1 = get_all("SELECT * FROM forumdata where forum_data_attribut = 1 ");
         $this->forumdata_2 = get_all("SELECT * FROM forumdata where forum_data_attribut = 2 ");
         $this->forumdata_3 = get_all("SELECT * FROM forumdata where forum_data_attribut = 3 ");
