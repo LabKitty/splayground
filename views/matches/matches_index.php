@@ -1,8 +1,22 @@
-<?foreach( $matchs as $match):?>
 
-    <div id="getting-started"><?= $match['match_second'] ?></div>
-    <?= $match['team_one'] ?> vs <?= $match['team_two'] ?>
-<? endforeach ?>
+
+
+
+
+        <div class="caption"><!-- Matches-->
+            <h3>Matches</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <?foreach( $matchs as $match):?>
+                        <span class="badge"><div id="getting-started"><?= $match['match_second'] ?></div></span></span>
+                        <?= $match['team_one'] ?> vs <?= $match['team_two'] ?>
+                    <? endforeach ?>
+                </li>
+            </ul>
+        </div><!-- Matches-->
+
+    </div>
+
 
 
 
@@ -14,6 +28,6 @@
     var $el = $('#getting-started');
 
     $el.countdown($el.html(), function(event) {
-        $el.text(event.strftime('%D days %H:%M:%S'));
+        $el.text(event.strftime('%D days %H h %M m'));
     });
 </script>

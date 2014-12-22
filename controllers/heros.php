@@ -10,6 +10,7 @@ class heros extends Controller {
 
     function index(){
         $this->heros = get_all("SELECT * FROM hero");
+        $this->matchs = get_all("SELECT * FROM matches");
         $this->hero_attribut_1 = get_all("SELECT * FROM hero where hero_attribut = 1");
         $this->hero_attribut_2 = get_all("SELECT * FROM hero where hero_attribut = 2");
         $this->hero_attribut_3 = get_all("SELECT * FROM hero where hero_attribut = 3");
