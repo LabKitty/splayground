@@ -19,7 +19,7 @@
                     <li class="list-group-item">
                         <?foreach( $matchs as $match):?>
 
-                            <div data-countdown="<?= $match['match_second'] ?>"></div>
+                        <span class="badge"><div id="getting-started"><?= $match['match_second'] ?></div></span>span>
                                 <?= $match['team_one'] ?> vs <?= $match['team_two'] ?>
                         <? endforeach ?>
                     </li>
@@ -91,11 +91,14 @@
 
 </script>
 
-<script type="text/javascript">
-    $('[data-countdown]').each(function() {
-        var $this = $(this), finalDate = $(this).data('countdown');
-        $this.countdown(finalDate, function(event) {
-            $this.html(event.strftime('%D days %H:%M:%S'));
-        });
+
+<script src="assets/components/jquery-1.11.2.min.js"></script>
+<script src="assets/components/jquery.countdown-2.0.4/jquery.countdown.min.js"></script>
+
+<script>
+    var $el = $('#getting-started');
+
+    $el.countdown($el.html(), function(event) {
+        $el.text(event.strftime('%D days %H:%M:%S'));
     });
 </script>
