@@ -15,8 +15,10 @@
                 <h3>Matches</h3>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <span class="badge">14</span>
-                        Cras justo odio
+                        <?foreach( $matchs as $match):?>
+                        <span class="badge"><?= $match['match_second'] ?> </span>
+                         <?= $match['team_one'] ?> vs <?= $match['team_two'] ?>
+                        <? endforeach ?>
                     </li>
                 </ul>
             </div><!-- Matches-->
