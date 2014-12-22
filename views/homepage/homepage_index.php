@@ -16,7 +16,7 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <?foreach( $matchs as $match):?>
-                            <span class="badge"><div id="getting-started"><?= $match['match_second'] ?></div></span>
+                            <span class="badge"><div id="#getting-started"><?= $match['match_second'] ?></div></span>
                                 <?= $match['team_one'] ?> vs <?= $match['team_two'] ?>
                         <? endforeach ?>
                     </li>
@@ -85,11 +85,14 @@
         interval: 2000
     })
 
-    $("#getting-started")
-    4   .countdown("2015/01/01", function(event) {
-        5     $(this).text(
-            6       event.strftime('%D days %H:%M:%S')
-        7     );
-        8   });
 
+</script>
+
+<script type="text/javascript">
+    $("#getting-started")
+        .countdown("2015/01/01", function(event) {
+            $(this).text(
+                event.strftime('%D days %H:%M:%S')
+            );
+        });
 </script>
