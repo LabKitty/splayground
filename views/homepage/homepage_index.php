@@ -19,7 +19,7 @@
                     <li class="list-group-item">
                         <?foreach( $matchs as $match):?>
 
-                        <span class="badge"><div id="getting-started"><?= $match['match_second'] ?></div></span>span>
+                        <span class="badge"><div id="getting-started"><?= $match['match_second'] ?></div></span></span>
                                 <?= $match['team_one'] ?> vs <?= $match['team_two'] ?>
                         <? endforeach ?>
                     </li>
