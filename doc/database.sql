@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 22, 2014 at 09:07 AM
+-- Generation Time: Dec 22, 2014 at 12:23 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -161,15 +161,16 @@ CREATE TABLE IF NOT EXISTS `matches` (
   `team_two` text NOT NULL,
   `team_two_pic` text NOT NULL,
   `match_score` text NOT NULL,
-  `match_time` time NOT NULL
+  `match_time` time NOT NULL,
+  `match_second` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `matches`
 --
 
-INSERT INTO `matches` (`match_id`, `match_title`, `team_one`, `team_one_pic`, `team_two`, `team_two_pic`, `match_score`, `match_time`) VALUES
-  (1, '', 'DK', '', 'Speed.cn', '', '', '04:21:23');
+INSERT INTO `matches` (`match_id`, `match_title`, `team_one`, `team_one_pic`, `team_two`, `team_two_pic`, `match_score`, `match_time`, `match_second`) VALUES
+  (1, '', 'DK', '', 'Speed.cn', '', '', '04:21:23', '2014-12-23 04:10:24');
 
 -- --------------------------------------------------------
 
