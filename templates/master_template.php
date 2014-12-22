@@ -86,8 +86,9 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="assets/components/jquery/1.10.2/jquery-1.10.2.min.js"></script>
-<script src="assets/components/countdown/jquery.countdown.js"></script>
-<script src="assets/components/countdown/jquery.countdown.min.js"></script>
 <script src="assets/components/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="jquery-1.11.2.min.js"></script>
+<script src="jquery.countdown-2.0.4/jquery.countdown.min.js"></script>
+
 </body>
 </html>

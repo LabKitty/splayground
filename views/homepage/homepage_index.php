@@ -1,3 +1,5 @@
+
+
 <div class=".col-xs-6 .col-sm-4"><!-- Sidebar-->
     <div class="pull-right">
         <div class="thumbnail">
@@ -16,7 +18,8 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <?foreach( $matchs as $match):?>
-                            <span class="badge"><div id="#getting-started"><?= $match['match_second'] ?></div></span>
+
+                            <div data-countdown="<?= $match['match_second'] ?>"></div>
                                 <?= $match['team_one'] ?> vs <?= $match['team_two'] ?>
                         <? endforeach ?>
                     </li>
@@ -89,10 +92,10 @@
 </script>
 
 <script type="text/javascript">
-    $("#getting-started")
-        .countdown("2015/01/01", function(event) {
-            $(this).text(
-                event.strftime('%D days %H:%M:%S')
-            );
+    $('[data-countdown]').each(function() {
+        var $this = $(this), finalDate = $(this).data('countdown');
+        $this.countdown(finalDate, function(event) {
+            $this.html(event.strftime('%D days %H:%M:%S'));
         });
+    });
 </script>
