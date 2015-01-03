@@ -8,7 +8,7 @@
 
 class coverage extends Controller {
     function index(){
-        $this->videos = get_all("SELECT * FROM video order by video_id DESC LIMIT 1");
+        $this->broadcasts = get_all("SELECT * FROM broadcast");
     }
 
     function view(){

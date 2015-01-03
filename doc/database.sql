@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 03, 2015 at 01:58 PM
+-- Generation Time: Jan 03, 2015 at 10:10 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -49,18 +49,17 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `post_id` int(10) unsigned NOT NULL,
   `review_id` int(10) unsigned NOT NULL,
   `new_id` int(10) unsigned NOT NULL,
-  `hero_id` int(11) unsigned NOT NULL,
-  `forumpost_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+  `hero_id` int(11) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`comment_author`, `comment_text`, `comment_created`, `comment_id`, `post_id`, `review_id`, `new_id`, `hero_id`, `forumpost_id`) VALUES
-  ('News5', 'Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped by parents with certain overflow properties or appear out of bounds of the viewport. Address these issues on your own as they arise.', '2014-11-17 09:06:15', 9, 0, 0, 5, 0, 0),
-  ('Reviews5', 'Sometimes even best family traditions can turn into nightmare, and in Grim Tales: Color of Fright Collector’s Edition Game for PC that happened to the Gray family!', '2014-11-17 09:06:31', 11, 0, 5, 0, 0, 0),
-  ('Reviews5', 'Reviews5', '2014-11-17 09:06:46', 13, 4, 0, 0, 0, 0);
+INSERT INTO `comment` (`comment_author`, `comment_text`, `comment_created`, `comment_id`, `post_id`, `review_id`, `new_id`, `hero_id`) VALUES
+  ('News5', 'Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped by parents with certain overflow properties or appear out of bounds of the viewport. Address these issues on your own as they arise.', '2014-11-17 09:06:15', 9, 0, 0, 5, 0),
+  ('Reviews5', 'Sometimes even best family traditions can turn into nightmare, and in Grim Tales: Color of Fright Collector’s Edition Game for PC that happened to the Gray family!', '2014-11-17 09:06:31', 11, 0, 5, 0, 0),
+  ('Reviews5', 'Reviews5', '2014-11-17 09:06:46', 13, 4, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -70,47 +69,17 @@ INSERT INTO `comment` (`comment_author`, `comment_text`, `comment_created`, `com
 
 CREATE TABLE IF NOT EXISTS `forum` (
   `forum_id` int(11) NOT NULL,
-  `forum_title` varchar(50) NOT NULL,
-  `forumthreadpost` varchar(50) NOT NULL,
-  `forumlastpost` varchar(50) NOT NULL,
-  `forum_attribut` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `forum_title` varchar(25) NOT NULL,
+  `forum_desc` varchar(25) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forum`
 --
 
-INSERT INTO `forum` (`forum_id`, `forum_title`, `forumthreadpost`, `forumlastpost`, `forum_attribut`) VALUES
-  (1, 'Community', 'Threads/Posts', 'Last Post', '1'),
-  (2, 'Competitive dota', 'Threads/Posts', 'Last Post', '2'),
-  (3, 'Support', 'Threads/Posts', 'Last Post', '3');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `forumdata`
---
-
-CREATE TABLE IF NOT EXISTS `forumdata` (
-  `forumdata_id` int(11) NOT NULL,
-  `forum_title` varchar(50) NOT NULL,
-  `forum_desc` varchar(255) NOT NULL,
-  `forum_stat` varchar(50) NOT NULL,
-  `forumlastpost` varchar(50) NOT NULL,
-  `forum_data_attribut` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `forumdata`
---
-
-INSERT INTO `forumdata` (`forumdata_id`, `forum_title`, `forum_desc`, `forum_stat`, `forumlastpost`, `forum_data_attribut`) VALUES
-  (1, 'Community', 'Whats happening in the Dota world that everyone ne', '', '', '1'),
-  (2, 'Broadcast Discussion', 'Talk about broadcasts!', '', '', '1'),
-  (3, 'Off topic and Help', 'Ah, the great outdoors!', '', '', '1'),
-  (4, 'Teams and Players', 'Be proud to be a fanboy, groupie or just strong supporter!', '', '', '2'),
-  (5, 'Tournaments', 'A place to discuss all competitive Dota matches and tournaments!', '', '', '2'),
-  (6, 'Feedback and Support', 'For wishes and problems', '', '', '3');
+INSERT INTO `forum` (`forum_id`, `forum_title`, `forum_desc`) VALUES
+  (1, 'Esimene', ''),
+  (2, 'Teine', '');
 
 -- --------------------------------------------------------
 
@@ -121,22 +90,33 @@ INSERT INTO `forumdata` (`forumdata_id`, `forum_title`, `forum_desc`, `forum_sta
 CREATE TABLE IF NOT EXISTS `forumpost` (
   `forumpost_id` int(11) NOT NULL,
   `forumpost_title` varchar(25) NOT NULL,
-  `forumpost_desc` varchar(25) NOT NULL,
-  `forumpost_text` varchar(255) NOT NULL,
-  `forumdata_id` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `forumpost_text` varchar(24) NOT NULL,
+  `subforum_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forumpost`
 --
 
-INSERT INTO `forumpost` (`forumpost_id`, `forumpost_title`, `forumpost_desc`, `forumpost_text`, `forumdata_id`) VALUES
-  (1, 'Test1', 'Pikk test 1', 'Pikk test 1 väga tekst!', '1'),
-  (2, 'Test 2', 'Pikk test 2', 'Pikk test 2 väga tekst!', '2'),
-  (3, 'Test 4', 'Test 4', 'Test 4', '3'),
-  (4, 'Test 5', 'Test 5', 'Test 5', '4'),
-  (5, 'Test 6', 'Test 6', 'Test 6', '5'),
-  (6, 'Test 7', 'Test 7', 'Test 7', '6');
+INSERT INTO `forumpost` (`forumpost_id`, `forumpost_title`, `forumpost_text`, `subforum_id`) VALUES
+  (1, ' Esimene Esimene', 'Esimene', 1),
+  (2, ' Teine Teine', 'Teine', 2),
+  (3, 'Kolmas Kolmas', 'Kolmas', 3),
+  (4, 'Neljas Neljas', 'Neljas', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forumreplay`
+--
+
+CREATE TABLE IF NOT EXISTS `forumreplay` (
+  `forumreplay_id` int(11) NOT NULL,
+  `forumreplay_text` text NOT NULL,
+  `forumreplay_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `forumreplay_author` varchar(25) NOT NULL,
+  `forumpost_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -273,6 +253,29 @@ INSERT INTO `review` (`review_id`, `review_title`, `review_desc`, `review_text`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `subforum`
+--
+
+CREATE TABLE IF NOT EXISTS `subforum` (
+  `subforum_id` int(11) NOT NULL,
+  `subforum_title` varchar(25) NOT NULL,
+  `subforum_desc` varchar(25) NOT NULL,
+  `forum_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subforum`
+--
+
+INSERT INTO `subforum` (`subforum_id`, `subforum_title`, `subforum_desc`, `forum_id`) VALUES
+  (1, 'Esimene', '1', 1),
+  (2, 'Teine', '2', 1),
+  (3, 'Kolmas', '3', 2),
+  (4, 'Neljas', '4', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tag`
 --
 
@@ -295,14 +298,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `active` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `email` varchar(255) NOT NULL,
   `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `username`, `is_admin`, `password`, `active`, `email`, `deleted`) VALUES
-  (1, 'demo', 0, 'demo', 1, '', 0);
+  (1, 'demo', 0, 'demo', 1, '', 0),
+  (2, 'lilleke', 1, '1234', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -312,21 +316,22 @@ INSERT INTO `user` (`user_id`, `username`, `is_admin`, `password`, `active`, `em
 
 CREATE TABLE IF NOT EXISTS `video` (
   `video_id` int(11) NOT NULL,
-  `video_title` varchar(45) NOT NULL,
-  `video_desc` varchar(100) NOT NULL,
-  `video_text` varchar(255) NOT NULL,
+  `video_title` varchar(50) NOT NULL,
+  `video_desc` varchar(25) NOT NULL,
+  `video_text` varchar(25) NOT NULL,
   `video_link` varchar(255) NOT NULL,
   `video_number` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `video`
 --
 
 INSERT INTO `video` (`video_id`, `video_title`, `video_desc`, `video_text`, `video_link`, `video_number`) VALUES
-  (1, 'Video 1', '', 'Gravida cursus urna sollicitudin tellus Ut et Nulla a dolor auctor. Id neque vel dui porttitor...', 'https://www.youtube.com/watch?v=Ahg6qcgoay4', 'Ahg6qcgoay4'),
-  (2, 'Video 2', '', 'Gravida cursus urna sollicitudin tellus Ut et Nulla a dolor auctor. Id neque vel dui porttitor...', 'https://www.youtube.com/watch?v=ubNF9QNEQLA', 'ubNF9QNEQLA'),
-  (3, 'Battlefield Hardline - Into The Jungle Traile', '', '', '', 'dIfeh6EGZo8');
+  (1, 'Dota 2 Fails of the Week - Ep. 114', 'DotaCinema', '', '', 'C5FM_Yq2kbA'),
+  (2, 'Dota 2 WTF Moments 91', 'Dota Watafak', '', '', '_Hu-5ucCsWA'),
+  (3, 'The DOTA 2 Reporter Episode 27: Mid-Game Montage', 'Wronchi Animation', '', '', 'RzBuIymc2BE'),
+  (4, 'DotaFX - 2014 !', 'DotaFX', '', '', 'UBXqjZt5J2s');
 
 --
 -- Indexes for dumped tables
@@ -351,16 +356,16 @@ ALTER TABLE `forum`
 ADD PRIMARY KEY (`forum_id`);
 
 --
--- Indexes for table `forumdata`
---
-ALTER TABLE `forumdata`
-ADD PRIMARY KEY (`forumdata_id`);
-
---
 -- Indexes for table `forumpost`
 --
 ALTER TABLE `forumpost`
 ADD PRIMARY KEY (`forumpost_id`);
+
+--
+-- Indexes for table `forumreplay`
+--
+ALTER TABLE `forumreplay`
+ADD PRIMARY KEY (`forumreplay_id`);
 
 --
 -- Indexes for table `hero`
@@ -393,6 +398,12 @@ ALTER TABLE `review`
 ADD PRIMARY KEY (`review_id`), ADD UNIQUE KEY `review_id` (`review_id`);
 
 --
+-- Indexes for table `subforum`
+--
+ALTER TABLE `subforum`
+ADD PRIMARY KEY (`subforum_id`);
+
+--
 -- Indexes for table `tag`
 --
 ALTER TABLE `tag`
@@ -423,22 +434,17 @@ MODIFY `broadcast_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-MODIFY `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `forum`
 --
 ALTER TABLE `forum`
-MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `forumdata`
---
-ALTER TABLE `forumdata`
-MODIFY `forumdata_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `forumpost`
 --
 ALTER TABLE `forumpost`
-MODIFY `forumpost_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `forumpost_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `hero`
 --
@@ -465,6 +471,11 @@ MODIFY `post_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 ALTER TABLE `review`
 MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `subforum`
+--
+ALTER TABLE `subforum`
+MODIFY `subforum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
@@ -473,9 +484,9 @@ MODIFY `tag_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;SET FOREIGN_KEY_CHECKS=1;
+MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;SET FOREIGN_KEY_CHECKS=1;

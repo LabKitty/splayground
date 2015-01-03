@@ -8,34 +8,44 @@
 
 class forum extends Controller
 {
-    function index()
-    {
+    function index(){
+        $this->forums = get_all("SELECT * FROM forum");
+        $this->forum_1 = get_all("SELECT * FROM forum WHERE forum_id ='1'");
+        $this->forum_2 = get_all("SELECT * FROM forum WHERE forum_id ='2'");
+        $this->subforums = get_all("select * from forum INNER JOIN subforum ON forum.forum_id = subforum.forum_id");
+        $this->subforum_1 = get_all("SELECT * FROM subforum WHERE forum_id ='1'");
+        $this->subforum_2 = get_all("SELECT * FROM subforum WHERE forum_id ='2'");
+    }
 
-        $this->forum = get_all("SELECT * FROM forum order by forum_id DESC ");
-        $this->forum_1 = get_all("SELECT * FROM forum where forum_attribut = 1 ");
-        $this->forum_2 = get_all("SELECT * FROM forum where forum_attribut = 2 ");
-        $this->forum_3 = get_all("SELECT * FROM forum where forum_attribut = 3 ");
-        $this->forumdata = get_all("SELECT * FROM forumdata");
-        $this->forumdata_1 = get_all("SELECT * FROM forumdata where forum_data_attribut = 1 ");
-        $this->forumdata_2 = get_all("SELECT * FROM forumdata where forum_data_attribut = 2 ");
-        $this->forumdata_3 = get_all("SELECT * FROM forumdata where forum_data_attribut = 3 ");
+    function forumdisplay(){
+        $subforum_id = $this->params[0];
+        $this->forumposts = get_all("SELECT * FROM forumpost NATURAL JOIN subforum WHERE subforum_id='$subforum_id' ");
 
     }
 
-    function view()
-    {
+    function showthread(){
         $forumpost_id = $this->params[0];
         $this->forumpost = get_first("SELECT * FROM forumpost NATURAL JOIN user WHERE forumpost_id='$forumpost_id'");
-        $this->comments = get_all("SELECT * FROM comment NATURAL JOIN forumpost WHERE forumpost_id='$forumpost_id'");
-
+        $this->forumreplays = get_all("SELECT * FROM forumreplay NATURAL JOIN forumpost WHERE forumpost_id='$forumpost_id'");
     }
 
-    function display()
+    function showthread_post()
     {
-        $forumdata_id = $this->params[0];
-        $this->forumpost = get_all("SELECT * FROM forumpost NATURAL JOIN forumdata WHERE forumdata_id='$forumdata_id'");
-
+        $data = $_POST['data'];
+        $data['forumpost_id'] = $this->params[0];
+        insert('forumreplay', $data);
     }
+
+    function index_post()
+    {
+        $data = $_POST['data'];
+        $data['forumreplay_id'] = $this->params[0];
+        insert('forumreplay', $data);
+    }
+
+
 
 
 }
+
+

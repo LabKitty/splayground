@@ -8,7 +8,7 @@
                 <ul class="list-group">
                     <?foreach( $broadcasts as $broadcast):?>
                         <li class="list-group-item">
-                            <a href="<?= BASE_URL ?>coverage/view"><?= $broadcast['broadcast_title'] ?></a>
+                            <a href="<?= BASE_URL ?>coverage"><?= $broadcast['broadcast_title'] ?></a>
                         </li>
                     <? endforeach ?>
                 </ul>

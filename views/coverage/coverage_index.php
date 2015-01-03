@@ -13,20 +13,13 @@
 </div><!-- Sidebar -->
 
 <div class="col-md-10 .col-md-4">
-    <?foreach( $videos as $video):?><!-- Video posts -->
+    <?foreach( $broadcasts as $broadcast):?><!-- Video posts -->
     <div class=".col-xs-12 .col-md-8"   >
 
-            <div class="video-container">
-                <iframe width="580" height="370" src="http://www.youtube.com/embed/<?=$video['video_number']?>" frameborder="0" allowfullscreen></iframe>
-            </div>
+        <div class="video-container">
+            <?= $broadcast['broadcast_link'] ?>
+        </div>
 
-            <div class="caption">
-                <h3><?=$video['video_title']?></h3>
-                <p><?=$video['video_text']?></p>
-
-            </div>
     </div>
     <? endforeach ?><!-- -Video posts -->
 </div>
-
-<iframe src="http://www.twitch.tv/beyondthesummit/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="http://www.twitch.tv/beyondthesummit?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;"></a>

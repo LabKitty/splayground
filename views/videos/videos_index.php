@@ -5,8 +5,10 @@
             <div class="caption"><!-- Broadcast-->
                 <h3>Broadcast</h3>
                 <ul class="list-group">
-                    <?foreach( $videos as $video):?>
-                        <li class="list-group-item"><?= $video['video_title'] ?></li>
+                    <?foreach( $broadcasts as $broadcast):?>
+                        <li class="list-group-item">
+                            <a href="<?= BASE_URL ?>coverage"><?= $broadcast['broadcast_title'] ?></a>
+                        </li>
                     <? endforeach ?>
                 </ul>
             </div><!-- Broadcast-->
@@ -41,14 +43,15 @@
                             <iframe width="262" height="175" src="http://www.youtube.com/embed/<?=$video['video_number']?>" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="caption">
-                            <h3><?=$video['video_title']?></h3>
-                            <p><?=$video['video_text']?></p>
+                            <h3><a href="https://www.youtube.com/watch?v=<?=$video['video_number']?>"><?=$video['video_title']?></a></h3>
+                            <p><?=$video['video_desc']?></p>
 
                         </div>
                     </div>
                 </div>
             <? endforeach ?><!-- -Video posts -->
         </div>
+
 
 
     </div>
