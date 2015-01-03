@@ -16,9 +16,20 @@
 	<!-- Custom styles for this template -->
 	<style>
 		body {
-			min-height: 2000px !important;
-			padding-top: 70px;
+            min-height: 100%;
+            padding-top: 70px;
+            padding-bottom: 70px;
 		}
+        .footer{
+            clear:both;
+            padding: 15px 0 25px 0;
+            background: #101010;
+            text-align:center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+        }
 	</style>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,11 +61,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li role="presentation" <?= $controller=="homepage"?'class="active"':"" ?>><a href="homepage">Home</a></li>
-                <li role="presentation" <?= $controller=="news"?'class="active"':"" ?>><a href="news">News</a></li>
                 <li role="presentation"<?= $controller=="heros"?'class="active"':"" ?>><a href="heros">Hero</a></li>
                 <li role="presentation"<?= $controller=="reviews"?'class="active"':"" ?>><a href="reviews">Reviews</a></li>
                 <li role="presentation"<?= $controller=="videos"?'class="active"':"" ?>><a href="videos">Videos</a></li>
-                <li role="presentation"<?= $controller=="coverage"?'class="active"':"" ?>><a href="coverage">Coverage</a></li>
+
                 <li role="presentation"<?= $controller=="forums"?'class="active"':"" ?>><a href="forum">Forum</a></li>
             </ul>
            <!---<form class="navbar-form navbar-left" role="search">
@@ -74,12 +84,19 @@
 
 
 <div class="container">
-
 	<!-- Main component for a primary marketing message or call to action -->
 	<? if( !file_exists("views/$controller/{$controller}_$action.php")) error_out('The view <i>views/'. $controller . '/' .  $controller . '_' . $action . '.php</i> does not exist. Create that file.');?>
     <?  @require "views/$controller/{$controller}_$action.php"; ?>
 
+
+
+
 </div> <!-- /container -->
+
+
+<div class="footer">
+Copyright © 2014 - <?php echo date("Y") ?>  Splayground.
+</div> <!-- /footer -->
 
 
 <!-- Bootstrap core JavaScript

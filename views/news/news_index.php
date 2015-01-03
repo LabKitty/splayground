@@ -32,9 +32,6 @@
 </div>
 
 
-
-
-
 <div class="col-md-10 .col-md-4">
     <?foreach( $news as $new):?>
         <div class="col-xs-6 col-md-3">
