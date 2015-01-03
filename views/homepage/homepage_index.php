@@ -6,8 +6,10 @@
             <div class="caption"><!-- Broadcast-->
                 <h3>Broadcast</h3>
                 <ul class="list-group">
-                    <?foreach( $videos as $video):?>
-                        <li class="list-group-item"><?= $video['video_title'] ?></li>
+                    <?foreach( $broadcasts as $broadcast):?>
+                        <li class="list-group-item">
+                            <a href="<?= BASE_URL ?>coverage/view"><?= $broadcast['broadcast_title'] ?></a>
+                        </li>
                     <? endforeach ?>
                 </ul>
             </div><!-- Broadcast-->

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 22, 2014 at 12:23 PM
+-- Generation Time: Jan 03, 2015 at 01:58 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -14,6 +14,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `splayground`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `broadcast`
+--
+
+CREATE TABLE IF NOT EXISTS `broadcast` (
+  `broadcast_id` int(11) NOT NULL,
+  `broadcast_title` varchar(25) NOT NULL,
+  `broadcast_link` varchar(1000) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `broadcast`
+--
+
+INSERT INTO `broadcast` (`broadcast_id`, `broadcast_title`, `broadcast_link`) VALUES
+  (1, 'Beyondthesummit', '<iframe src="http://www.twitch.tv/beyondthesummit/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="http://www.twitch.tv/beyondthesummit?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from BeyondTheSummit on www.twitch.tv</a>'),
+  (2, 'joinDOTA Blue', 'http://www.twitch.tv/joindotared');
 
 -- --------------------------------------------------------
 
@@ -313,6 +333,12 @@ INSERT INTO `video` (`video_id`, `video_title`, `video_desc`, `video_text`, `vid
 --
 
 --
+-- Indexes for table `broadcast`
+--
+ALTER TABLE `broadcast`
+ADD PRIMARY KEY (`broadcast_id`);
+
+--
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
@@ -388,6 +414,11 @@ ADD PRIMARY KEY (`video_id`);
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `broadcast`
+--
+ALTER TABLE `broadcast`
+MODIFY `broadcast_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `comment`
 --
