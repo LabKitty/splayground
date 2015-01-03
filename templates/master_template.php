@@ -95,7 +95,7 @@
 
 
 <div class="footer">
-Copyright © 2014 - <?php echo date("Y") ?>  Splayground.
+Copyright © 2014 - 2015  Splayground.
 </div> <!-- /footer -->
 
 
