@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 03, 2015 at 10:10 PM
+-- Generation Time: Jan 05, 2015 at 08:50 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `review_id` int(10) unsigned NOT NULL,
   `new_id` int(10) unsigned NOT NULL,
   `hero_id` int(11) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
@@ -59,7 +59,9 @@ CREATE TABLE IF NOT EXISTS `comment` (
 INSERT INTO `comment` (`comment_author`, `comment_text`, `comment_created`, `comment_id`, `post_id`, `review_id`, `new_id`, `hero_id`) VALUES
   ('News5', 'Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped by parents with certain overflow properties or appear out of bounds of the viewport. Address these issues on your own as they arise.', '2014-11-17 09:06:15', 9, 0, 0, 5, 0),
   ('Reviews5', 'Sometimes even best family traditions can turn into nightmare, and in Grim Tales: Color of Fright Collector’s Edition Game for PC that happened to the Gray family!', '2014-11-17 09:06:31', 11, 0, 5, 0, 0),
-  ('Reviews5', 'Reviews5', '2014-11-17 09:06:46', 13, 4, 0, 0, 0);
+  ('Reviews5', 'Reviews5', '2014-11-17 09:06:46', 13, 4, 0, 0, 0),
+  ('serdthgjklö', 'ölkjhgfc', '2015-01-03 21:18:33', 15, 0, 0, 0, 1),
+  ('serdthgjklö', 'ölkjhgfc', '2015-01-03 21:19:28', 16, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +72,7 @@ INSERT INTO `comment` (`comment_author`, `comment_text`, `comment_created`, `com
 CREATE TABLE IF NOT EXISTS `forum` (
   `forum_id` int(11) NOT NULL,
   `forum_title` varchar(25) NOT NULL,
-  `forum_desc` varchar(25) NOT NULL
+  `forum_desc` varchar(75) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
@@ -78,8 +80,8 @@ CREATE TABLE IF NOT EXISTS `forum` (
 --
 
 INSERT INTO `forum` (`forum_id`, `forum_title`, `forum_desc`) VALUES
-  (1, 'Esimene', ''),
-  (2, 'Teine', '');
+  (1, 'Üldine ', ''),
+  (2, 'Muu', '');
 
 -- --------------------------------------------------------
 
@@ -91,6 +93,8 @@ CREATE TABLE IF NOT EXISTS `forumpost` (
   `forumpost_id` int(11) NOT NULL,
   `forumpost_title` varchar(25) NOT NULL,
   `forumpost_text` varchar(24) NOT NULL,
+  `forumpost_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `forumpost_author` varchar(25) NOT NULL,
   `subforum_id` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -98,11 +102,11 @@ CREATE TABLE IF NOT EXISTS `forumpost` (
 -- Dumping data for table `forumpost`
 --
 
-INSERT INTO `forumpost` (`forumpost_id`, `forumpost_title`, `forumpost_text`, `subforum_id`) VALUES
-  (1, ' Esimene Esimene', 'Esimene', 1),
-  (2, ' Teine Teine', 'Teine', 2),
-  (3, 'Kolmas Kolmas', 'Kolmas', 3),
-  (4, 'Neljas Neljas', 'Neljas', 4);
+INSERT INTO `forumpost` (`forumpost_id`, `forumpost_title`, `forumpost_text`, `forumpost_date`, `forumpost_author`, `subforum_id`) VALUES
+  (1, ' Esimene Esimene', 'Esimene', '2015-01-03 21:29:18', 'Moosipurk', 1),
+  (2, ' Teine Teine', 'Teine', '2015-01-03 21:29:22', 'Draama', 2),
+  (3, 'Kolmas Kolmas', 'Kolmas', '2015-01-03 21:29:29', 'Pidu', 3),
+  (4, 'Neljas Neljas', 'Neljas', '2015-01-03 21:29:33', 'Pillerkaar', 4);
 
 -- --------------------------------------------------------
 
@@ -116,7 +120,14 @@ CREATE TABLE IF NOT EXISTS `forumreplay` (
   `forumreplay_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `forumreplay_author` varchar(25) NOT NULL,
   `forumpost_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forumreplay`
+--
+
+INSERT INTO `forumreplay` (`forumreplay_id`, `forumreplay_text`, `forumreplay_created`, `forumreplay_author`, `forumpost_id`) VALUES
+  (1, 'lol', '2015-01-03 22:34:58', 'lol', 1);
 
 -- --------------------------------------------------------
 
@@ -259,19 +270,24 @@ INSERT INTO `review` (`review_id`, `review_title`, `review_desc`, `review_text`,
 CREATE TABLE IF NOT EXISTS `subforum` (
   `subforum_id` int(11) NOT NULL,
   `subforum_title` varchar(25) NOT NULL,
-  `subforum_desc` varchar(25) NOT NULL,
+  `subforum_desc` varchar(100) NOT NULL,
   `forum_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `subforum`
 --
 
 INSERT INTO `subforum` (`subforum_id`, `subforum_title`, `subforum_desc`, `forum_id`) VALUES
-  (1, 'Esimene', '1', 1),
-  (2, 'Teine', '2', 1),
-  (3, 'Kolmas', '3', 2),
-  (4, 'Neljas', '4', 2);
+  (1, 'Üldine', 'Üldine jutt, mis kuhugi mujale seoses dotaga ei sobi, läheb siia!', 1),
+  (2, 'Küsimused', 'Kõiksugu dota ja arvuti related küsimused võib siia postitada.', 1),
+  (3, 'Õpetused', 'Kui kellegil on soovi mingi hero guide jaoks, siis võib siia requesti postitada ja leiab abi!', 1),
+  (4, 'Tiimid', 'Tahad luua oma dota2he tiimi või tahad hoopis otsida tiimi? Siit leiad vastuse!', 1),
+  (5, 'Meedia', 'Fails of the week ep. 1000 + välja toomist väärt Dota2 muuvid.', 1),
+  (6, 'Turniirid', 'Tagasiside', 1),
+  (7, 'Trade', 'In-game itemite vahetamise-ostmise koht!', 1),
+  (8, 'Off topic', '', 2),
+  (9, 'Tagasiside & Tugi', 'Kõik küsimused ja arvamused kohta siia!', 2);
 
 -- --------------------------------------------------------
 
@@ -434,7 +450,7 @@ MODIFY `broadcast_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-MODIFY `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `forum`
 --
@@ -445,6 +461,11 @@ MODIFY `forum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 ALTER TABLE `forumpost`
 MODIFY `forumpost_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `forumreplay`
+--
+ALTER TABLE `forumreplay`
+MODIFY `forumreplay_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `hero`
 --
@@ -474,7 +495,7 @@ MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `subforum`
 --
 ALTER TABLE `subforum`
-MODIFY `subforum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `subforum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tag`
 --
