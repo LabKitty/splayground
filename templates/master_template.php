@@ -74,7 +74,7 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form> -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?= BASE_URL ?><?= $auth->logged_in == true? 'Logout' : 'Login' ?>"><?=$auth->logged_in == true? 'Logout' : 'Login' ?></a></li>
+                <li><a href="<?= BASE_URL ?><?= $auth->logged_in == true? 'logout' : 'login' ?>"><?=$auth->logged_in == true? 'logout' : 'login' ?></a></li>
 
             </ul>
         </div><!-- /.navbar-collapse -->
