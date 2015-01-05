@@ -65,6 +65,9 @@
                 <li role="presentation"<?= $controller=="reviews"?'class="active"':"" ?>><a href="reviews">Reviews</a></li>
                 <li role="presentation"<?= $controller=="videos"?'class="active"':"" ?>><a href="videos">Videos</a></li>
                 <li role="presentation"<?= $controller=="forum"?'class="active"':"" ?>><a href="forum">Forum</a></li>
+                <?php if($auth->logged_in):?>
+                    <li role="presentation"<?= $controller=="admin"?'class="active"':"" ?>><a href="admin">Admin</a></li>
+                <?php endif ?>
             </ul>
            <!---<form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
