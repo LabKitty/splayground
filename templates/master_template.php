@@ -60,12 +60,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li role="presentation" <?= $controller=="homepage"?'class="active"':"" ?>><a href="homepage">Home</a></li>
+                <li role="presentation"<?= $controller=="homepage"?'class="active"':"" ?>><a href="homepage">Home</a></li>
                 <li role="presentation"<?= $controller=="heros"?'class="active"':"" ?>><a href="heros">Hero</a></li>
                 <li role="presentation"<?= $controller=="reviews"?'class="active"':"" ?>><a href="reviews">Reviews</a></li>
                 <li role="presentation"<?= $controller=="videos"?'class="active"':"" ?>><a href="videos">Videos</a></li>
-
-                <li role="presentation"<?= $controller=="forums"?'class="active"':"" ?>><a href="forum">Forum</a></li>
+                <li role="presentation"<?= $controller=="forum"?'class="active"':"" ?>><a href="forum">Forum</a></li>
             </ul>
            <!---<form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
@@ -74,7 +73,8 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form> -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?= BASE_URL ?><?= $auth->logged_in == true? 'logout' : 'login' ?>"><?=$auth->logged_in == true? 'logout' : 'login' ?></a></li>
+                <li><a href="<?= BASE_URL ?><?= $auth->logged_in == true? 'logout' : 'login' ?>"><?=$auth->logged_in == true? 'logout' : 'login' ?></a> </li>
+                <li role="presentation"<?= $controller=="registration"?'class="active"':"" ?>><a href="registration">Register</a></li>
 
             </ul>
         </div><!-- /.navbar-collapse -->

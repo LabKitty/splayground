@@ -18,24 +18,22 @@
 
 
 <?foreach ($forumreplays as $forumreplay): ?><!-- Comments -->
-<ul class="list-group">
-    <li class="list-group-item">
-        <div class="media">
-            <?=$forumreplay['forumreplay_created']?><br>
-            <?=$forumreplay['forumreplay_author']?><br>
-            <div class="media-left media-middle" href="#">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="media">
+                <?=$forumreplay['forumreplay_created']?><br>
+                <?=$forumreplay['forumreplay_author']?><br>
+                <div class="media-left media-middle" href="#">
 
-                <img src="http://forum.gamesports.net/dota/images/avatars/chaos_knight_hphover.png" alt="...">
+                    <img src="http://forum.gamesports.net/dota/images/avatars/chaos_knight_hphover.png" alt="...">
+                </div>
+                <div class="media-body">
+
+                    <p><?=$forumreplay['forumreplay_text']?></p>
+                </div>
             </div>
-            <div class="media-body">
-
-                <p><?=$forumreplay['forumreplay_text']?></p>
-            </div>
-        </div>
-    </li>
-</ul>
-
-
+        </li>
+    </ul>
 <? endforeach ?><!-- Comments -->
 
 <form class="form-inline" method="post" role="form"><!-- Comments insert  -->
