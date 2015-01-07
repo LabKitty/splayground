@@ -1,5 +1,4 @@
 
-
 <div class=".col-xs-6 .col-sm-4"><!-- Sidebar-->
     <div class="pull-right">
 

@@ -1,6 +1,6 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#home" role="tab" data-toggle="tab">Dashboard</a></li>
+    <li><a href="#home" role="tab" data-toggle="tab">Dashboard</a></li>
     <li><a href="#posts" role="tab" data-toggle="tab">Posts</a></li>
     <li><a href="#reviews" role="tab" data-toggle="tab">Reviews</a></li>
     <li><a href="#heroes" role="tab" data-toggle="tab">Heroes</a></li>
@@ -50,12 +50,43 @@
                 <?foreach( $forumposts as $forumpost):?>
                     <li class="list-group-item">
                         <a href="<?= BASE_URL ?>forum/showthread/<?= $forumpost['subforum_id']?>"><?=$forumpost['forumpost_title']?></a>
-
                         <h6> Teema on alustatud <?=$forumpost['forumpost_date']?> lisas <?=$forumpost['forumpost_author']?> </h6>
                     </li>
                 <? endforeach ?>
             </div>
         </div>
     </div>
-    <div class="tab-pane" id="users">...</div>
+
+    <div class="tab-pane" id="users">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">Users</div>
+
+            <table class="table">
+                <tr>
+                    <td><b>Username</b></td>
+                    <td><b>Email</b></td>
+                    <td><b>Edit</b></td>
+
+                </tr>
+                <?foreach( $users as $user):?>
+                    <tr>
+                        <td><?=$user['username']?></a></td>
+                        <td><?=$user['email']?></a></td>
+                        <td>
+                            <form action="users/edit/<?= $user['user_id'] ?>">
+                                <div class="pull-right">
+                                    <button class="btn btn-primary">
+                                        Edit
+                                    </button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+
+                <? endforeach ?>
+            </table>
+
+        </div>
+    </div>
 </div>

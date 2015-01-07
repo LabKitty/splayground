@@ -13,7 +13,6 @@ class newreview  extends Controller
 
     }
 
-
     function index_post()
     {
         $data = $_POST['data'];
